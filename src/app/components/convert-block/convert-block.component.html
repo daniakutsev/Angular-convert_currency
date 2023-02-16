@@ -1,0 +1,54 @@
+<div class="convertBlock">
+  <h4>Select value for convert</h4>
+  <div class="selectBLock">
+
+
+    <div class="firstValue">
+      <mat-form-field appearance="fill">
+        Currency
+        <mat-select [(ngModel)]="firstCurrency">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.name">
+            {{currency.name}}
+          </mat-option>
+        </mat-select>
+
+
+      </mat-form-field>
+
+      <div class="inputFirstValue">
+        <mat-label></mat-label>
+        <input matInput type="text" [(ngModel)]="firstValue">
+        <button *ngIf="firstValue" matSuffix mat-icon-button aria-label="Clear" (click)="firstValue = 1">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="board">
+      First currency:{{firstCurrency}}
+      First value:{{firstValue}}
+      Second currency:{{secondCurrency}}
+      Second value:{{secondValue}}
+    </div>
+
+    <div class="secondValue">
+      <mat-form-field appearance="fill">
+        Currency
+        <mat-select [(ngModel)]="secondCurrency">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.name">
+            {{currency.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="inputSecondValue">
+        <mat-label></mat-label>
+        <input matInput type="text" [(ngModel)]="secondValue">
+        <button *ngIf="secondValue" matSuffix mat-icon-button aria-label="Clear" (click)="secondValue = 1">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
