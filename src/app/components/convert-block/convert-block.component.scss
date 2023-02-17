@@ -7,9 +7,29 @@
   margin: 6rem;
   background: lightgray;
   width: 700px;
-  height: 500px;
+  height: 200px;
   border-radius: 10px;
   padding: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+input{
+  width: 100px;
+}
+.mat-icon-button{
+  width: 30px;
+  height: 30px;
+
+}
+.board{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+.mat-flat-button{
+  margin: 1rem;
+}
+span{
+  margin: 1rem;
 }

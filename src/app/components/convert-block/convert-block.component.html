@@ -1,3 +1,21 @@
+<p>
+  <mat-toolbar color="primary">
+      <mat-icon>currency_exchange</mat-icon>
+
+    <span>Convert</span>
+    <span class="example-spacer"></span>
+
+    <mat-icon>
+      attach_money
+    </mat-icon>
+    <span *ngIf="usd">{{usd.rate}}</span>
+    <mat-icon>euro</mat-icon>
+    <span *ngIf="eur">{{eur.rate}}</span>
+
+
+  </mat-toolbar>
+</p>
+
 <div class="convertBlock">
   <h4>Select value for convert</h4>
   <div class="selectBLock">
@@ -6,7 +24,7 @@
     <div class="firstValue">
       <mat-form-field appearance="fill">
         Currency
-        <mat-select [(ngModel)]="firstCurrency">
+        <mat-select [(ngModel)]="firstCurrency" (ngModelChange)="onChange($event)" >
           <mat-option *ngFor="let currency of currencies" [value]="currency.name">
             {{currency.name}}
           </mat-option>
@@ -17,25 +35,18 @@
 
       <div class="inputFirstValue">
         <mat-label></mat-label>
-        <input matInput type="text" [(ngModel)]="firstValue">
-        <button *ngIf="firstValue" matSuffix mat-icon-button aria-label="Clear" (click)="firstValue = 1">
-          <mat-icon>close</mat-icon>
-        </button>
+        <input matInput type="number" [(ngModel)]="firstValue" (ngModelChange)="onChange($event)">
+
       </div>
 
     </div>
 
-    <div class="board">
-      First currency:{{firstCurrency}}
-      First value:{{firstValue}}
-      Second currency:{{secondCurrency}}
-      Second value:{{secondValue}}
-    </div>
+
 
     <div class="secondValue">
       <mat-form-field appearance="fill">
         Currency
-        <mat-select [(ngModel)]="secondCurrency">
+        <mat-select [(ngModel)]="secondCurrency" (ngModelChange)="onChange($event)">
           <mat-option *ngFor="let currency of currencies" [value]="currency.name">
             {{currency.name}}
           </mat-option>
@@ -43,10 +54,8 @@
       </mat-form-field>
       <div class="inputSecondValue">
         <mat-label></mat-label>
-        <input matInput type="text" [(ngModel)]="secondValue">
-        <button *ngIf="secondValue" matSuffix mat-icon-button aria-label="Clear" (click)="secondValue = 1">
-          <mat-icon>close</mat-icon>
-        </button>
+        <input matInput type="number" [(ngModel)]="secondValue" (ngModelChange)="onChange($event)">
+
       </div>
     </div>
   </div>
