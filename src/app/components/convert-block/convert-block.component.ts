@@ -49,7 +49,6 @@ export class ConvertBlockComponent implements OnInit, OnDestroy {
 
 
   onChange($event: any) {
-    console.log($event)
     if (this.firstCurrency === this.secondCurrency) {
       this.firstValue = this.secondValue
     }
