@@ -1,6 +1,3 @@
-export interface ICurrencies {
-  name: string
-}
 
 export interface ICurrency {
   r030: number,

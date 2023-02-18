@@ -1,6 +1,6 @@
 <p>
   <mat-toolbar color="primary">
-      <mat-icon>currency_exchange</mat-icon>
+    <mat-icon>currency_exchange</mat-icon>
 
     <span>Convert</span>
     <span class="example-spacer"></span>
@@ -24,9 +24,9 @@
     <div class="firstValue">
       <mat-form-field appearance="fill">
         Currency
-        <mat-select [(ngModel)]="firstCurrency" (ngModelChange)="onChange($event)" >
-          <mat-option *ngFor="let currency of currencies" [value]="currency.name">
-            {{currency.name}}
+        <mat-select [(ngModel)]="firstCurrency" (ngModelChange)="onChange($event)">
+          <mat-option *ngFor="let currency of allCurrencies" [value]="currency.cc">
+            {{currency.cc}}
           </mat-option>
         </mat-select>
 
@@ -42,13 +42,12 @@
     </div>
 
 
-
     <div class="secondValue">
       <mat-form-field appearance="fill">
         Currency
         <mat-select [(ngModel)]="secondCurrency" (ngModelChange)="onChange($event)">
-          <mat-option *ngFor="let currency of currencies" [value]="currency.name">
-            {{currency.name}}
+          <mat-option *ngFor="let currency of allCurrencies" [value]="currency.cc">
+            {{currency.cc}}
           </mat-option>
         </mat-select>
       </mat-form-field>
